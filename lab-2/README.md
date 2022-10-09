@@ -26,4 +26,36 @@ make clean
 
 
 # Bonus Part
+## Cron Jobs
+```
+* * * * * command to be executed
+- - - - -
+| | | | |
+| | | | ----- Day of week (0 - 7) (Sunday=0 or 7)
+| | | ------- Month (1 - 12)
+| | --------- Day of month (1 - 31)
+| ----------- Hour (0 - 23)
+------------- Minute (0 - 59)
+```
+## How to Setup a Crone Job on Linux
+1. Insert the following command in the terminal
+```
+crontab -e
+```
+1. After choosing a suitable text editor(prefering vim if you have experience - nano if you do not - and then you are going to be persented with a text file)
+1. Adding the following to the end of the file (TO BE CONFIRMED)
+```
+* * * * * sleep 23; /bin/bash SCRIPT_PATH
+```
+1. This is going to run the script every 1 minute at 23 second?
+
+### Question:
+What should be the cron expression if I need to run this backup every 3rd Friday
+of the month at 12:31 am.
+### Answer
+```
+31 12 15-22 * 5 /usr/bash SCRIPT_PATH
+```
+
+
 
