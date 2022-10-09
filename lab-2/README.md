@@ -11,12 +11,6 @@ make
 # to delete BACKUPDIR
 make clean
 ```
-
-### Using backupd.sh
-```bash
-./backupd DIR BACUPDIR INTERVAL-SECS MAX-BACKUPS
-```
-
 | Argument Name |                    Description                    |      Default      |
 | ------------- | :-----------------------------------------------: | :---------------: |
 | DIR           |         Directory thet will be backed up          | Current directory |
@@ -24,7 +18,10 @@ make clean
 | INTERVAL-SECS | Delay between each scan for any chaanges in `dir` |         1         |
 | MAX-BACKUPS   |     Maximum number of backups in `BACKUPDIR`      |         5         |
 
-
+### Using backupd.sh
+```bash
+./backupd DIR BACUPDIR INTERVAL-SECS MAX-BACKUPS
+```
 # Bonus Part
 ## Cron Jobs
 ```
