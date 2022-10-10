@@ -81,7 +81,7 @@ do
     
     # TODO maybe change it to a while loop
     if [[ $count > $max_backups ]]; then
-        file_delete=$(ls  | sort | head -1)
+        file_delete=$(ls  | sort | head -1) # no need for piping to sort program as ls/ ls -r already outputs sorted manner.
         count=`expr $count - 1`
         echo "Deleted...$file_delete"
         rm -r $file_delete
