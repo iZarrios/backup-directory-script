@@ -67,6 +67,6 @@ of the month at 12:31 am.
 
 ### Answer
 
-```text
-31 12 15-22 * 5 /usr/bash SCRIPT_PATH
+```bash
+31 0 15-22 * 5 /usr/bash SCRIPT_PATH
 ```
