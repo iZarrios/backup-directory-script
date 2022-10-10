@@ -58,7 +58,7 @@ crontab -e
 * * * * * sleep 23; /bin/bash SCRIPT_PATH
 ```
 
-1. This is going to run the script every 1 minute at 23 second?
+- This is going to run the script every 1 minute at 23 second?
 
 ### Questions
 
