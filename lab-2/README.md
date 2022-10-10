@@ -60,12 +60,10 @@ crontab -e
 
 1. This is going to run the script every 1 minute at 23 second?
 
-### Question
+### Questions
 
-What should be the cron expression if I need to run this backup every 3rd Friday
-of the month at 12:31 am.
-
-### Answer
+1. What should be the cron expression if I need to run this backup every 3rd Friday
+   of the month at 12:31 am.
 
 ```bash
 31 0 15-22 * 5 /usr/bash SCRIPT_PATH
