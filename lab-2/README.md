@@ -55,10 +55,10 @@ crontab -e
 1. Adding the following to the end of the file (TO BE CONFIRMED)
 
 ```bash
-* * * * * sleep 23; /bin/bash SCRIPT_PATH
+23 * * * * /bin/bash SCRIPT_PATH
 ```
 
-- This is going to run the script every 1 minute at 23 second?
+- This is going to run the script every 1 hour at 23rd minute
 
 ### Questions
 
