@@ -1,14 +1,18 @@
 #! /bin/bash
 
+# helper function incase of faulty args
+
 error_args(){
     echo "./backupd.sh DIR BACKUPDIR INTERVAL-SECS MAX-BACKUPS"
     exit 1
 }
 
-re="^[1-9]+$"
+# regular expression for numerical validation
+re="^[0-9]+$" # keep searching for 1-9 values until false
 
-if [[ $# < 4 ]]
+if [[ $# < 4 ]] 
 then
+    # if wrong number of args
     error_args
 else
 
@@ -23,21 +27,25 @@ else
     then
         error_args
     else
-        backupdir=$2 # or we can use $(relapath($1))
+        backupdir=$2 # or we can use $(relapath($2))
     fi
 
     if ! [[ $3 =~ $re ]] ; then
         echo "error: Not a number" 
         error_args
     else
-        interval=$3
+        interval=$3 # what if the value is 0? sleep 0
     fi
 
-    if ! [[ $3 =~ $re ]] ; then
+    if ! [[ $4 =~ $re ]] ; then
         echo "error: Not a number" 
         error_args
     else
-        max_backups=$4
+        if [[ $4 == 0 ]]; then # what if the value is 0
+            echo "max_backups cannot be less than 1"
+            exit 1
+        fi
+        max_backups=$4 
     fi
 fi
 
