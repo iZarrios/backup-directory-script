@@ -58,7 +58,8 @@ crontab -e
 * * * * * /bin/bash SCRIPT_PATH
 ```
 
-- This is going to run the script every 1 hour at 23rd minute
+- ~This is going to run the script every 1 hour at 23rd minute~
+- This is going to run the script every 1 minute
 
 ### Questions
 
