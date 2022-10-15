@@ -12,24 +12,18 @@ then
     error_args
 else
 
-    # dir=$(realpath $1)
-    # backupdir=$(realpath $2)
-
-    # echo $dir
-    # echo $backupdir
-    # exit 0
     if [[ $1 == "." ]]
     then
         dir=$(pwd)
     else
-        dir=$1
+        dir=$1 # or we can use $(relapath($1))
     fi
 
     if [[ $2 == "." ]]
     then
         error_args
     else
-        backupdir=$2
+        backupdir=$2 # or we can use $(relapath($1))
     fi
 
     if ! [[ $3 =~ $re ]] ; then
@@ -47,13 +41,14 @@ else
     fi
 fi
 
-# if [[ -d $backupdir ]] 
-# then
-#     echo "$(realpath $backupdir)...already exists"
-#     exit 1
-# else
-#     mkdir $backupdir
-# fi
+if [[ -d $backupdir ]] 
+then
+    echo "$(realpath $backupdir)...already exists"
+    echo "Care that maybe another directory is already backed up in $backupdir"
+else
+    echo "Created $backupdir"
+    mkdir $backupdir
+fi
 
 cd $backupdir
 
