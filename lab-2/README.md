@@ -55,7 +55,7 @@ crontab -e
 1. Adding the following to the end of the file (TO BE CONFIRMED)
 
 ```bash
-23 * * * * /bin/bash SCRIPT_PATH
+* * * * * /bin/bash SCRIPT_PATH
 ```
 
 - This is going to run the script every 1 hour at 23rd minute
