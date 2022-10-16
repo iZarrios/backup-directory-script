@@ -13,6 +13,3 @@ clean:
 	@if test -d $(BACKUPDIR); \
 		then rm -r $(BACKUPDIR); \
 		fi
-
-test:
-	@echo $(DIR)
