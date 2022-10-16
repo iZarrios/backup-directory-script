@@ -9,18 +9,11 @@ The script examines the directory for changes, and if any are found, it creates 
 
 ```bash
 # to run with default values
-make
+make DIR=. BACKUPDIR=~/.bak INTERVAL-SECS=1 MAX-BACKUPS=3
 
 # to delete BACKUPDIR
-make clean
+make clean BACKUPDIR=YOUR_BACKUP_DIRECTORY
 ```
-
-| Argument Name |                         Description                          |      Default      |
-| ------------- | :----------------------------------------------------------: | :---------------: |
-| DIR           |               Directory thet will be backed up               | Current directory |
-| BACUPDIR      |  Location of the directory in which the back up copy exists  |     `~/.bak`      |
-| INTERVAL-SECS | Delay between each scan for any changes in `dir`(in seconds) |         1         |
-| MAX-BACKUPS   |           Maximum number of backups in `BACKUPDIR`           |         5         |
 
 ### Using backupd.sh
 

@@ -1,15 +1,18 @@
 all: backfile generate
 
 backfile:
-	@if test -d ~/.bak; \
+	@if test -d $(BACKUPDIR); \
 		then echo exists; \
-		else mkdir ~/.bak ; \
+		else mkdir $(BACKUPDIR) ; \
 		fi
 
 generate:
-	@./backupd.sh . ~/.bak 1 5
+	@./backupd.sh $(DIR) $(BACKUPDIR) $(INTERVAL-SECS) $(MAX-BACKUPS)
 
 clean:
-	@if test -d ~/.bak; \
-		then rm -r ~/.bak; \
+	@if test -d $(BACKUPDIR); \
+		then rm -r $(BACKUPDIR); \
 		fi
+
+test:
+	@echo $(DIR)
