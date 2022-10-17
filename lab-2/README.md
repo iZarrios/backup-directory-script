@@ -7,8 +7,13 @@ The script examines the directory for changes, and if any are found, it creates 
 
 1. You need to install make program
 ```bash
+# incase of debian based / ubuntu / mint / pop
 sudo apt install make
+
+# red hat / fedora / centOS
 yum install make
+
+# I use arch btw / *shrug*
 pacman -sS make
 ```
 
