@@ -25,20 +25,26 @@ else
 
     if [[ $2 == "." ]]
     then
-        error_args
+        backupdir=$(pwd)
     else
         backupdir=$(realpath $2) 
     fi
 
+    if [[ $dir = $backupdir ]]; then 
+        # if the dir and backupdir are the same then error cuz it is useless
+        # (also cant cp directorty into it self)
+        error_args
+    fi
+
     if ! [[ $3 =~ $re ]] ; then
-        echo "error: Not a number" 
+        echo "Error: Not a number" 
         error_args
     else
         interval=$3 # what if the value is 0? sleep 0
     fi
 
     if ! [[ $4 =~ $re ]] ; then
-        echo "error: Not a number" 
+        echo "Error: Not a number" 
         error_args
     else
         if [[ $4 == 0 ]]; then # what if the value is 0
