@@ -23,9 +23,9 @@ else
         dir=$(realpath $1) 
     fi
 
-    if [[ $2 == "." ]]
+    if [[ $2 == "." ]] # if condition still not useful
     then
-        backupdir=$(pwd)
+        backupdir=$(pwd) # or realpath
     else
         backupdir=$(realpath $2) 
     fi

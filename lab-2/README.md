@@ -3,6 +3,16 @@
 This script simulates a **backup** system for a **single** directory.
 The script examines the directory for changes, and if any are found, it creates a new copy in the backup location specified by the user.
 
+## Prequisites
+
+1. You need to install make program
+```bash
+sudo apt install make
+yum install make
+pacman -sS make
+```
+
+
 ## How to Use
 
 ### Using make
