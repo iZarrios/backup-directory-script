@@ -20,14 +20,14 @@ else
     then
         dir=$(pwd)
     else
-        dir=$1 # or we can use $(relapath($1))
+        dir=$(realpath $1) # or we can use $(relapath($1))
     fi
 
     if [[ $2 == "." ]]
     then
         error_args
     else
-        backupdir=$2 # or we can use $(relapath($2))
+        backupdir=$(realpath $2) # or we can use $(relapath($2))
     fi
 
     if ! [[ $3 =~ $re ]] ; then

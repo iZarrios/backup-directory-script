@@ -16,18 +16,18 @@ then
     error_args
 else
 
-    if [[ $1 == "." ]]
+    if [[ $1 == "." ]] # if condition not useful
     then
-        dir=$(pwd)
+        dir=$(pwd) # or realpath
     else
-        dir=$1 # or we can use $(relapath($1))
+        dir=$(realpath $1) 
     fi
 
     if [[ $2 == "." ]]
     then
         error_args
     else
-        backupdir=$2 # or we can use $(relapath($2))
+        backupdir=$(realpath $2) 
     fi
 
     if ! [[ $3 =~ $re ]] ; then
