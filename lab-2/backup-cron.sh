@@ -68,20 +68,17 @@ mkdir $date_fmt
 cp -r $dir $date_fmt
 
 
-while [[ true ]]
-do
-    sleep $interval
-    ls -lr $dir > directory-info.new
+ls -lr $dir > directory-info.new
 
-    if ! cmp -s "directory-info.last" "directory-info.new"; then
-        echo "updated - Making new backup"
-        mkdir $(date +"%Y-%m-%d-%H-%M-%S")
-        cp -r $dir $(date +"%Y-%m-%d-%H-%M-%S")
-        ls -lr $dir > directory-info.last
-    fi
-    count=$(ls | wc -l)
-    count=`expr $count - 2` # not counting directory-info-* files
-    
+if ! cmp -s "directory-info.last" "directory-info.new"; then
+    echo "updated - Making new backup"
+    mkdir $(date +"%Y-%m-%d-%H-%M-%S")
+    cp -r $dir $(date +"%Y-%m-%d-%H-%M-%S")
+    ls -lr $dir > directory-info.last
+fi
+count=$(ls | wc -l)
+count=`expr $count - 2` # not counting directory-info-* files
+
     # TODO maybe change it to a while loop
     if [[ $count > $max_backups ]]; then
         file_delete=$(ls  | sort | head -1) # no need for piping to sort program as ls/ ls -r already outputs sorted manner.
@@ -89,4 +86,3 @@ do
         echo "Deleted...$file_delete"
         rm -r $file_delete
     fi
-done
