@@ -8,7 +8,7 @@ The script examines the directory for changes, and if any are found, it creates 
 ### Using make
 
 ```bash
-# to run with default values
+# to run with makefile
 make DIR=. BACKUPDIR=~/.bak INTERVAL-SECS=1 MAX-BACKUPS=3
 
 # to delete BACKUPDIR
@@ -45,10 +45,10 @@ crontab -e
 ```
 
 1. After choosing a suitable text editor(prefering vim if you have experience - nano if you do not - and then you are going to be persented with a text file)
-1. Adding the following to the end of the file (TO BE CONFIRMED)
+1. Adding the following to the end of the file
 
 ```bash
-* * * * * /bin/bash SCRIPT_PATH
+* * * * * /bin/bash SCRIPT_PATH ARGS
 ```
 
 - ~This is going to run the script every 1 hour at 23rd minute~
@@ -60,5 +60,5 @@ crontab -e
    of the month at 12:31 am.
 
 ```bash
-31 0 15-22 * 5 /usr/bash SCRIPT_PATH
+31 0 15-21 * 5 /usr/bash SCRIPT_PATH ARGS
 ```

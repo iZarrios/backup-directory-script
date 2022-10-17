@@ -6,7 +6,9 @@ backfile:
 		else mkdir $(BACKUPDIR) ; \
 		fi
 
-generate:
+# backupfile must run before generate
+
+generate: backfile
 	@./backupd.sh $(DIR) $(BACKUPDIR) $(INTERVAL-SECS) $(MAX-BACKUPS)
 
 clean:
