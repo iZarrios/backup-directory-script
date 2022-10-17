@@ -15,3 +15,5 @@ clean:
 	@if test -d $(BACKUPDIR); \
 		then rm -r $(BACKUPDIR); \
 		fi
+
+# taking arugments in a makefile is bad for the enviroment
