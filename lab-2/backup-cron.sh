@@ -66,12 +66,14 @@ fi
 
 cd $backupdir
 
-ls -lr $dir > directory-info.last
+if [[ -f directory-info-.last ]]; then
+    ls -lr $dir > directory-info.last
+    date_fmt=$(date +"%Y-%m-%d-%H-%M-%S")
 
-date_fmt=$(date +"%Y-%m-%d-%H-%M-%S")
+    mkdir $date_fmt
+    cp -r $dir $date_fmt
+fi
 
-mkdir $date_fmt
-cp -r $dir $date_fmt
 
 
 ls -lr $dir > directory-info.new
